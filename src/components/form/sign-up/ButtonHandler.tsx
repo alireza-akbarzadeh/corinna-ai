@@ -8,12 +8,11 @@ import Link from "next/link";
 import React, { ReactNode } from "react";
 import { useFormContext } from "react-hook-form";
 
-type ButtonHandlerProps = {};
-export function ButtonHandler(props: ButtonHandlerProps) {
+export function ButtonHandler() {
   const { currentStep, setCurrentStep } = useAuthContext();
   const { formState, getFieldState, getValues } =
     useFormContext<UserRegistrationProps>();
-  const { onGenerateOTP } = useSignUpForm();
+  const { onGenerateOTP, loading } = useSignUpForm();
   const { isDirty: isFullName } = getFieldState("fullname", formState);
   const { isDirty: isEmail } = getFieldState("email", formState);
   const { isDirty: isPssword } = getFieldState("password", formState);
@@ -26,7 +25,7 @@ export function ButtonHandler(props: ButtonHandlerProps) {
         <Button
           type="submit"
           className="w-full"
-          onClick={() => setCurrentStep(3)}
+          onClick={() => setCurrentStep(2)}
         >
           Continue
         </Button>
@@ -42,6 +41,7 @@ export function ButtonHandler(props: ButtonHandlerProps) {
       <div className="w-full flex items-center flex-col gap-3">
         <Button
           type="submit"
+          disabled={loading}
           className="w-full"
           {...(isValid && {
             onClick: () => {
@@ -64,11 +64,11 @@ export function ButtonHandler(props: ButtonHandlerProps) {
       </div>
     ),
     3: (
-      <div className="w-full flex flex-col gap-3 items-center">
-        <Button>Create An Account</Button>
+      <div className="w-full flex items-center flex-col gap-3">
+        <Button className="w-full">Create An Account</Button>
         <p>
-          Already have an account?
-          <Link href="/auth/sign-in" className="font-bold">
+          Already have an account?{" "}
+          <Link href="/auth/sign-in" className="font-bold text-orange">
             Sign In
           </Link>
         </p>

@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
+import { DynamicOptionsLoadingProps } from "next/dynamic";
 import React from "react";
 
-type SpinnerProps = {
+type SpinnerProps = DynamicOptionsLoadingProps & {
   noPadding?: boolean;
 };
 
