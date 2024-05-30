@@ -12,7 +12,7 @@ export function ButtonHandler() {
   const { currentStep, setCurrentStep } = useAuthContext();
   const { formState, getFieldState, getValues } =
     useFormContext<UserRegistrationProps>();
-  const { onGenerateOTP, loading } = useSignUpForm();
+  const { onGenerateOTP } = useSignUpForm();
   const { isDirty: isFullName } = getFieldState("fullname", formState);
   const { isDirty: isEmail } = getFieldState("email", formState);
   const { isDirty: isPssword } = getFieldState("password", formState);
@@ -41,7 +41,7 @@ export function ButtonHandler() {
       <div className="w-full flex items-center flex-col gap-3">
         <Button
           type="submit"
-          disabled={loading}
+          loading={formState.isSubmitting}
           className="w-full"
           {...(isValid && {
             onClick: () => {
@@ -65,7 +65,9 @@ export function ButtonHandler() {
     ),
     3: (
       <div className="w-full flex items-center flex-col gap-3">
-        <Button className="w-full">Create An Account</Button>
+        <Button loading={formState.isSubmitting} className="w-full">
+          Create An Account
+        </Button>
         <p>
           Already have an account?{" "}
           <Link href="/auth/sign-in" className="font-bold text-orange">

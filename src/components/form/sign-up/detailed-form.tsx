@@ -3,7 +3,7 @@ import React from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { FormGenerator } from "../form-generator";
 import { Button } from "@/components/ui/button";
-import { ArrowBigLeft, ArrowLeft } from "lucide-react";
+import { ArrowBigLeft, ArrowLeft, ChevronLeft } from "lucide-react";
 import { useAuthContext } from "@/context/use-auth-context";
 
 type DetailedFormProps = {
@@ -17,13 +17,11 @@ export default function DetailedForm(props: DetailedFormProps) {
   return (
     <>
       <Button
-        asChild
-        onClick={() => setCurrentStep((prev) => prev - 1)}
-        variant="ghost"
-        type="reset"
         className="border-orange border-2 flex-none p-2 cursor-pointer"
+        variant="outline"
+        size="icon"
       >
-        <ArrowLeft size={40} />
+        <ChevronLeft className="h-4 w-4" />
       </Button>
       <h2 className="text-gravel md:text-4xl font-bold">Account Details</h2>
       <p className="text-iridium md:text-sm">Enter Your email and password</p>
