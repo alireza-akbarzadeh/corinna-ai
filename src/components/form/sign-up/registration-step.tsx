@@ -15,9 +15,7 @@ const OtpForm = dynamic(() => import("./otp-form"), {
   loading: Spinner,
 });
 
-type RegistrationFormStepProps = {};
-
-export function RegistrationFormStep(props: RegistrationFormStepProps) {
+export function RegistrationFormStep() {
   const {
     register,
     formState: { errors },

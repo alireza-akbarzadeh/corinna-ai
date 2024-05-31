@@ -7,7 +7,7 @@ import { FormProvider } from "react-hook-form";
 
 export function SignUpFormProvider(props: PropsWithChildren) {
   const { children } = props;
-  const { loading, method, onGenerateOTP, onHandleSubmit } = useSignUpForm();
+  const { loading, method, onHandleSubmit } = useSignUpForm();
   return (
     <AuthContextProvider>
       <FormProvider {...method}>

@@ -1,10 +1,9 @@
+import { Button } from "@/components/ui/button";
 import { USER_REGISTRATION_FORM } from "@/constants/form";
-import React from "react";
+import { useAuthContext } from "@/context/use-auth-context";
+import { ChevronLeft } from "lucide-react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
 import { FormGenerator } from "../form-generator";
-import { Button } from "@/components/ui/button";
-import { ArrowBigLeft, ArrowLeft, ChevronLeft } from "lucide-react";
-import { useAuthContext } from "@/context/use-auth-context";
 
 type DetailedFormProps = {
   register: UseFormRegister<FieldValues>;
@@ -17,6 +16,7 @@ export default function DetailedForm(props: DetailedFormProps) {
   return (
     <>
       <Button
+        onClick={() => setCurrentStep((prev) => prev - 1)}
         className="border-orange border-2 flex-none p-2 cursor-pointer"
         variant="outline"
         size="icon"
