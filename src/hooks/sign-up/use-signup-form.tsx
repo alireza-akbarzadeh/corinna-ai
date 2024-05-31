@@ -1,7 +1,7 @@
 "use client";
 
 import { onCompleteUserRegistration } from "@/actions/auth";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 import {
   UserRegistrationProps,
   UserRegistrationSchema,
@@ -13,7 +13,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 export function useSignUpForm() {
-  const { toast } = useToast();
   const [loading, setLoading] = useState<boolean>(false);
   const { isLoaded, setActive, signUp } = useSignUp();
   const router = useRouter();
@@ -39,7 +38,7 @@ export function useSignUpForm() {
       await signUp.prepareEmailAddressVerification({ strategy: "email_code" });
       onNext((prev) => prev + 1);
     } catch (error: any) {
-      toast({ title: "Error", description: error.errors[0].longMessage });
+      toast("Error", { description: error.errors[0].longMessage });
     }
   };
 
@@ -68,7 +67,7 @@ export function useSignUpForm() {
             router.push("/dashboard");
           }
           if (registered?.status == 400) {
-            toast({ title: "Error", description: "Something went wrong!" });
+            toast("Error", { description: "Something went wrong!" });
           }
         }
       } catch (error) {}

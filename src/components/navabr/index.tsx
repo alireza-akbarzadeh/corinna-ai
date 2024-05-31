@@ -7,7 +7,7 @@ import { ModeToggle } from "../toggleMode";
 export default async function Navar() {
   return (
     <nav
-      className="flex gap-5 justify-between items-center px-7  font-bold border-b border-solid border-zinc-100 leading-[154.5%] max-md:flex-wrap max-md:px-5 py-3"
+      className="flex gap-5 justify-between items-center px-7  font-bold border-b border-solid dark:border-b-orange border-zinc-100 leading-[154.5%] max-md:flex-wrap max-md:px-5 py-3"
       role="navigation"
       aria-label="Main navigation"
     >

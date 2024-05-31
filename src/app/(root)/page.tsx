@@ -37,7 +37,7 @@ export default function Home() {
       <section className="flex justify-center items-center flex-col gap-4 mt-10">
         <h2 className="text-4xl text-center">Choose what fits you right</h2>
         <p className="text-muted-foreground text-center max-w-lg">
-          Our straightforward pricing plans are tailored to meet your needs. If
+          Our straight forward pricing plans are tailored to meet your needs. If
           you`&rsquo; not ready to commit you can get started for free
         </p>
         <div className="flex justify-center gap-4 flex-wrap mt-6">
