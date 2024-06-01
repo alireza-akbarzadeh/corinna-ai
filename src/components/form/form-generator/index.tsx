@@ -1,10 +1,9 @@
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { ErrorMessage } from "@hookform/error-message";
 import { ReactNode } from "react";
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form";
-import { ErrorMessage } from "@hookform/error-message";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
-import { Select } from "@/components/ui/select";
-import { Textarea } from "@/components/ui/textarea";
 
 type FormGeneratorProps = {
   type: "text" | "email" | "password";

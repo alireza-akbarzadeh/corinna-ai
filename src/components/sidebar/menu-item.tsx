@@ -41,7 +41,7 @@ export function MenuItem(props: MenuItemProps) {
               : current == path
               ? "dark:bg-white bg-orange  font-bold text-black"
               : "text-gray-500",
-            "rounded-lg py-2 px-1 w-full my-1"
+            "rounded-lg py-2 px-2 w-full my-1"
           )}
           href={path ? `/${path}` : "#"}
         >
