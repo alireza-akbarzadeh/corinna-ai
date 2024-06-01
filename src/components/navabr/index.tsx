@@ -1,8 +1,8 @@
 import { UserButton } from "@clerk/nextjs";
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { ModeToggle } from "../toggleMode";
+import { Logo } from "@/components/logo";
 
 export default async function Navar() {
   return (
@@ -12,17 +12,7 @@ export default async function Navar() {
       aria-label="Main navigation"
     >
       <div className="flex gap-1.5 justify-center self-stretch my-auto text-2xl tracking-tighter text-neutral-700">
-        <Image
-          src="/logo.svg"
-          alt="Company logo"
-          sizes="100vw"
-          style={{
-            width: "50px",
-            height: "auto",
-          }}
-          width={0}
-          height={0}
-        />
+        <Logo />
       </div>
       <ul
         role="menubar"

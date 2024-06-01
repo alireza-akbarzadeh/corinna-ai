@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 import { SIDE_BAR_MENU } from "@/constants/menu";
 import { DomainsMenu } from "./domains-menu";
 import { MenuItem } from "./menu-item";
+import { Logo } from "../logo";
 
 type MaxMenuProps = SidebarProps & {
   onExpand(): void;
@@ -18,17 +19,9 @@ export function MaxMenu(props: MaxMenuProps) {
   return (
     <div className="py-3 px-4 flex flex-col h-full">
       <div className="flex justify-between items-center">
-        <Image
-          src="logo.svg"
-          alt="logo"
-          sizes="100vw"
-          className="animate-fade-in opacity-0 delay-300 fill-mode-forwards"
-          style={{ width: "50%", height: "auto" }}
-          width={0}
-          height={0}
-        />
+        <Logo />
         <Menu
-          className="cursor-pointer animate-fade-in opacity-0 delay-300 fill-mode-forwards"
+          className="cursor-pointer text-iridium dark:text-white animate-fade-in opacity-0 delay-300 fill-mode-forwards"
           onClick={onExpand}
         />
       </div>

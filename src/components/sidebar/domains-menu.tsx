@@ -27,7 +27,7 @@ export function DomainsMenu(props: DomainsMenuProps) {
           description="add in your domain address to integrate your chatbot"
           title="Add your business"
           onOpen={
-            <div className="cursor-pointer text-gray-500 rounded-full border-2">
+            <div className="cursor-pointer text-gray-500 rounded-full border-2 px-1 py-1">
               <Plus />
             </div>
           }

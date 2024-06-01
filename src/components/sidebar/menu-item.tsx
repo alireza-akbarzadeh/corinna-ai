@@ -19,12 +19,12 @@ export function MenuItem(props: MenuItemProps) {
         <Link
           onClick={onSignOut}
           className={cn(
-            "flex items-center gap-2 px-1 py-2 rounded-lg my-1",
+            "flex items-center gap-2 px-1 py-2 rounded-md my-1",
             !current
-              ? "text-gray-500"
+              ? "text-gray-500 "
               : current == path
-              ? "bg-white font-bold text-black"
-              : "text-gray-500"
+              ? "dark:bg-white  font-bold text-black bg-orange"
+              : "text-gray-500 "
           )}
           href={path ? `/${path}` : "#"}
         >
@@ -39,9 +39,9 @@ export function MenuItem(props: MenuItemProps) {
             !current
               ? "text-gray-500"
               : current == path
-              ? "bg-white font-bold text-black"
+              ? "dark:bg-white bg-orange  font-bold text-black"
               : "text-gray-500",
-            "rounded-lg py-2 my-1"
+            "rounded-lg py-2 px-1 w-full my-1"
           )}
           href={path ? `/${path}` : "#"}
         >

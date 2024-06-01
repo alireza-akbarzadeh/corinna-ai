@@ -2,7 +2,12 @@
 const nextConfig = {
   reactStrictMode: false,
   images: {
-    remotePatterns: [{ protocol: "https", hostname: "https://ucarecdn.com" }],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ucarecdn.com",
+      },
+    ],
   },
 };
 

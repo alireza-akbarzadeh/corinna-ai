@@ -15,7 +15,7 @@ export function Sidebar(props: SidebarProps) {
   return (
     <div
       className={cn(
-        "bg-cream h-full w-[60px] fill-mode-forwards fixed md:relative",
+        "bg-cream dark:bg-black h-full w-[60px] fill-mode-forwards fixed md:relative",
         expand === undefined && "",
         expand == true
           ? "animate-open-sidebar"

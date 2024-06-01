@@ -16,6 +16,9 @@ async function DashboardLayout(props: DashboardLayoutProps) {
     <ChatProvider>
       <div className="flex h-screen w-full">
         <Sidebar domains={authenticated.domains} />
+        <div className="w-full h-screen flex flex-col pl-20 md:pl-4">
+          {children}
+        </div>
       </div>
     </ChatProvider>
   );

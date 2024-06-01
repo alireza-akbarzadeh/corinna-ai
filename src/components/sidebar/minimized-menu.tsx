@@ -7,6 +7,7 @@ import { MenuLogo } from "@/icons/menu-logo";
 import { MenuItem } from "./menu-item";
 import { DomainsMenu } from "./domains-menu";
 import { SidebarProps } from ".";
+import { Logo } from "../logo";
 
 type MinMenuProps = SidebarProps & {
   onShrink(): void;
@@ -19,7 +20,7 @@ export const MinMenu = (props: MinMenuProps) => {
   return (
     <div className="p-3 flex flex-col items-center h-full">
       <span className="animate-fade-in opacity-0 delay-300 fill-mode-forwards cursor-pointer">
-        <MenuLogo onClick={onShrink} />
+        <Logo noLabel onClick={onShrink} />
       </span>
       <div className="animate-fade-in opacity-0 delay-300 fill-mode-forwards flex flex-col justify-between h-full pt-10">
         <div className="flex flex-col">
